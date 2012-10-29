@@ -1,0 +1,26 @@
+#################
+## Visual Studio
+#################
+
+deploy/
+pkg/
+bin/
+obj/
+_ReSharper.*
+*.suo
+_ReSharper.*/
+.DS_Store
+*.DotSettings
+._.DS_Store
+*.dotCover
+TestResult.xml
+*.user
+*.pdb
+*/*.ncrunchsolution*
+._*
+*.StyleCop
+*.ncrunchproject
+*.cache
+NDependOut/
+*.ndproj
+*.StyleCop

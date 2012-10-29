@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{8F27D9CC-C0B6-4B88-9B5E-70336A82BB48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3ABC22A2-5CEF-464A-BE83-05B0B4BF66CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{BA34730D-9849-4B6B-AD4E-76215685C70F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImagesToResize", "ImagesToResize", "{78C3D7DC-4183-4513-AB39-A034F192B1A5}"
+	ProjectSection(SolutionItems) = preProject
+		resources\ImagesToResize\Inverno.jpg = resources\ImagesToResize\Inverno.jpg
+		resources\ImagesToResize\Montanhas azuis.jpg = resources\ImagesToResize\Montanhas azuis.jpg
+		resources\ImagesToResize\Ninféias.jpg = resources\ImagesToResize\Ninféias.jpg
+		resources\ImagesToResize\Pôr-do-sol.jpg = resources\ImagesToResize\Pôr-do-sol.jpg
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageNet.Tests.Unit", "tests\Image.Net.Tests.Unit\ImageNet.Tests.Unit.csproj", "{B3772C0F-23F8-4C20-86C4-0F33CA9D1EAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageNet.Core", "src\Image.Net.Core\ImageNet.Core.csproj", "{4EA2F945-2A83-4BCC-98DF-DB702217B91F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3772C0F-23F8-4C20-86C4-0F33CA9D1EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3772C0F-23F8-4C20-86C4-0F33CA9D1EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3772C0F-23F8-4C20-86C4-0F33CA9D1EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3772C0F-23F8-4C20-86C4-0F33CA9D1EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EA2F945-2A83-4BCC-98DF-DB702217B91F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EA2F945-2A83-4BCC-98DF-DB702217B91F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EA2F945-2A83-4BCC-98DF-DB702217B91F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EA2F945-2A83-4BCC-98DF-DB702217B91F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4EA2F945-2A83-4BCC-98DF-DB702217B91F} = {8F27D9CC-C0B6-4B88-9B5E-70336A82BB48}
+		{B3772C0F-23F8-4C20-86C4-0F33CA9D1EAC} = {3ABC22A2-5CEF-464A-BE83-05B0B4BF66CE}
+		{78C3D7DC-4183-4513-AB39-A034F192B1A5} = {BA34730D-9849-4B6B-AD4E-76215685C70F}
+	EndGlobalSection
+EndGlobal
