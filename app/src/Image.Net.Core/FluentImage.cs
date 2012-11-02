@@ -49,12 +49,12 @@
 
         public IRotate Rotate
         {
-            get { return new RotateImpl(this); }
+            get { return new Rotate(this); }
         }
 
         public IFlip Turn
         {
-            get { return new FlipImpl(this); }
+            get { return new Flip(this); }
         }
 
         public IDraw Draw

@@ -91,12 +91,12 @@
     <Compile Include="IRawImage.cs" />
     <Compile Include="ImageCodec.cs" />
     <Compile Include="RawImage.cs" />
-    <Compile Include="Operations\FlipImpl.cs" />
+    <Compile Include="Operations\Flip.cs" />
     <Compile Include="FluentImage.cs" />
     <Compile Include="Operations\FlipType.cs" />
     <Compile Include="Operations\IFlip.cs" />
     <Compile Include="Operations\IRotate.cs" />
-    <Compile Include="Operations\RotateImpl.cs" />
+    <Compile Include="Operations\Rotate.cs" />
     <Compile Include="Operations\RotateType.cs" />
     <Compile Include="OutputFormat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

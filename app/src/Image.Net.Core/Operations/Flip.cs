@@ -2,11 +2,11 @@
 {
     using System.Drawing;
 
-    internal class FlipImpl : IFlip
+    internal class Flip : IFlip
     {
         private readonly FluentImage builder;
 
-        public FlipImpl(FluentImage builder)
+        public Flip(FluentImage builder)
         {
             this.builder = builder;
         }
@@ -14,8 +14,8 @@
         public FluentImage In(FlipType flipType)
         {
             var flip = (flipType == FlipType.Horizontal) ? RotateFlipType.RotateNoneFlipX : RotateFlipType.RotateNoneFlipY;
-            builder.Image.RotateFlip(flip);
-            return builder;
+            this.builder.Image.RotateFlip(flip);
+            return this.builder;
         }
     }
 }
