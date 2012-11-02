@@ -7,27 +7,34 @@ Authors: Alexandre Barbieri (fakeezz)
 #### Resize
 
 ```c#
-var builder = new ImageBuilder("file.jpg");
-builder.Resize.Width(200);
+FluentImage.Create("file.jpg")
+           .Resize.Width(200)
+           .Save("your_file.jpg");
 ```
 
 #### Crop
 
 ```c#
-var builder = new ImageBuilder("file.jpg");
-builder.Resize.Crop(new Rectangle(300, 0, 200, 900));
+FluentImage.Create("file.jpg")
+           .Resize.Crop(new Rectangle(300, 0, 200, 900))
+           .Save("your_file.jpg");
 ```
 
 #### Rotate
 
 ```c#
-var builder = new ImageBuilder("file.jpg");
-builder.Rotate.Right(90);
+FluentImage.Create("file.jpg")
+           .Rotate.Right(90)
+           .Save("your_file.jpg");
 ```
 
 #### Filters
 
 ```c#
-var builder = new ImageBuilder("file.jpg");
-builder.Filters.Add(Filters.Color.Sepia());
+FluentImage.Create("file.jpg")
+           .Filters.Add(
+                Filters.Color.Sepia(),
+                Filters.Hsl.Brightness(10)
+           )
+           .Save("your_file.jpg");
 ```
