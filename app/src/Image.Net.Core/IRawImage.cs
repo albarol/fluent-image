@@ -9,6 +9,5 @@
         int Height { get; }
         Size Size { get; }
         ImageFormat RawFormat { get; }
-        OutputFormat OutputFormat { get; set; }
     }
 }

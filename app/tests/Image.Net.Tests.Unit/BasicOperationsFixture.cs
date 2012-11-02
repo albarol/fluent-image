@@ -48,8 +48,14 @@
         [Test]
         public void ToString_GetImageInBase64Format()
         {
+            // Arrange:
             this.builder = FluentImage.Create(IoHelper.ResolveUrl("Inverno.jpg"));
-            this.builder.Current.ToString().Should().Not.Be.Empty();
+
+            // Act:
+            var result = this.builder.ToString();
+
+            // Assert:
+            result.Should().Not.Be.Empty();
         }
     }
 }

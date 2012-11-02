@@ -1,8 +1,7 @@
-﻿using System.Drawing;
-using System.Drawing.Text;
-
-namespace ImageNet.Core.Operations
+﻿namespace ImageNet.Core.Operations
 {
+    using System.Drawing;
+
     internal class RotateImpl : IRotate
     {
         private readonly FluentImage builder;
@@ -39,8 +38,8 @@ namespace ImageNet.Core.Operations
         {
             var returnBitmap = new Bitmap(builder.Current.Width, builder.Current.Height);
             var g = Graphics.FromImage(returnBitmap);
-            if (builder.Current.OutputFormat == OutputFormat.Png)
-                g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+            //if (builder.Current.OutputFormat == OutputFormat.Png)
+            //    g.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
             g.TranslateTransform((float)builder.Current.Width / 2, (float)builder.Current.Height / 2);
             g.RotateTransform(dregrees);
             g.TranslateTransform(-(float)builder.Current.Width / 2, -(float)builder.Current.Height / 2);

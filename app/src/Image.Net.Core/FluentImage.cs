@@ -1,5 +1,6 @@
 ﻿namespace ImageNet.Core
 {
+    using System;
     using System.Collections.Generic;
     using System.Drawing;
     using System.Drawing.Imaging;
@@ -17,7 +18,7 @@
         
         private FluentImage(Image image)
         {
-            Image = image;
+            this.Image = image;
             this.current = new RawImage(this);
             this.Encoders = new List<EncoderParameter>();
             this.Filtering = new FilteringImpl(this);
@@ -76,16 +77,28 @@
 
         public void Save(string path)
         {
+            this.Save(path, OutputFormat.Jpeg);
+        }
+
+        public void Save(string path, OutputFormat format)
+        {
             foreach (var filter in this.Filtering.Filters)
             {
                 filter.ProcessFilter(this.Image);
             }
-            
+
             var realPath = string.Format(@"{0}\{1}{2}", Path.GetDirectoryName(path), Path.GetFileNameWithoutExtension(path), Path.GetExtension(path));
             this.Image.Save(
                 realPath,
-                ImageCodec.FromOutputFormat(this.Current.OutputFormat),
+                ImageCodec.FromOutputFormat(format),
                 this.Encoders.Count > 0 ? new EncoderParameters { Param = this.Encoders.ToArray() } : null);
+        }
+
+        public override string ToString()
+        {
+            var imageConverter = new ImageConverter();
+            var imageBytes = (byte[])imageConverter.ConvertTo(this.Image, typeof(byte[]));
+            return imageBytes != null ? Convert.ToBase64String(imageBytes) : string.Empty;
         }
     }
 }
