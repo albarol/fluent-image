@@ -4,8 +4,8 @@
 
     public interface IDraw
     {
-        ImageBuilder AddBorder(BorderStyle borderStyle);
-        ImageBuilder ApplyImage(Image image);
-        ImageBuilder ApplyImage(Image image, Rectangle rectangle);
+        FluentImage AddBorder(BorderStyle borderStyle);
+        FluentImage ApplyImage(Image image);
+        FluentImage ApplyImage(Image image, Rectangle rectangle);
     }
 }

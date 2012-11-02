@@ -4,14 +4,14 @@
 
     internal class DrawImpl : IDraw
     {
-        private readonly ImageBuilder builder;
+        private readonly FluentImage builder;
 
-        public DrawImpl(ImageBuilder builder)
+        public DrawImpl(FluentImage builder)
         {
             this.builder = builder;
         }
 
-        public ImageBuilder AddBorder(BorderStyle borderStyle)
+        public FluentImage AddBorder(BorderStyle borderStyle)
         {
             var size = new Size
             {
@@ -29,12 +29,12 @@
             return this.builder;
         }
         
-        public ImageBuilder ApplyImage(Image image)
+        public FluentImage ApplyImage(Image image)
         {
             return ApplyImage(image, new Rectangle(0, 0, image.Width, image.Height));
         }
 
-        public ImageBuilder ApplyImage(Image image, Rectangle rectangle)
+        public FluentImage ApplyImage(Image image, Rectangle rectangle)
         {
             var bitmap = new Bitmap(this.builder.Current.Width, this.builder.Current.Height);
             var graphics = Graphics.FromImage(bitmap);

@@ -5,32 +5,32 @@ namespace ImageNet.Core.Operations
 {
     internal class RotateImpl : IRotate
     {
-        private readonly ImageBuilder builder;
+        private readonly FluentImage builder;
 
-        public RotateImpl(ImageBuilder builder)
+        public RotateImpl(FluentImage builder)
         {
             this.builder = builder;
         }
 
-        public ImageBuilder Left(int degrees)
+        public FluentImage Left(int degrees)
         {
             var negative = -1*degrees;
             builder.Image = Rotate(negative);
             return builder;
         }
 
-        public ImageBuilder Left(RotateType rotateType)
+        public FluentImage Left(RotateType rotateType)
         {
             return Left((int) rotateType);
         }
 
-        public ImageBuilder Right(int degrees)
+        public FluentImage Right(int degrees)
         {
             builder.Image = Rotate(degrees);
             return builder;
         }
 
-        public ImageBuilder Right(RotateType rotateType)
+        public FluentImage Right(RotateType rotateType)
         {
             return Right((int)rotateType);
         }

@@ -1,14 +1,14 @@
-﻿using System.Drawing;
-
-namespace ImageNet.Core.Resizer
+﻿namespace ImageNet.Core.Resizer
 {
+    using System.Drawing;
+
     public interface IResize
     {
-        ImageBuilder Scale(int size);
-        ImageBuilder Percentual(float percentual);
-        ImageBuilder Width(int value);
-        ImageBuilder Height(int value);
-        ImageBuilder ToSize(Size size);
-        ImageBuilder Crop(Rectangle rectangle);
+        FluentImage Scale(int size);
+        FluentImage Percentual(float percentual);
+        FluentImage Width(int value);
+        FluentImage Height(int value);
+        FluentImage ToSize(Size size);
+        FluentImage Crop(Rectangle rectangle);
     }
 }

@@ -4,9 +4,9 @@
 
     internal class FilteringImpl : IFiltering
     {
-        private readonly ImageBuilder builder;
+        private readonly FluentImage builder;
 
-        public FilteringImpl(ImageBuilder builder)
+        public FilteringImpl(FluentImage builder)
         {
             this.builder = builder;
             this.Filters = new List<IFilter>();
@@ -14,7 +14,7 @@
 
         internal List<IFilter> Filters { get; set; }
 
-        public ImageBuilder Add(params IFilter[] filters)
+        public FluentImage Add(params IFilter[] filters)
         {
             this.Filters.AddRange(filters);
             return this.builder;

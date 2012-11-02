@@ -2,6 +2,6 @@
 {
     public interface IFlip
     {
-        ImageBuilder In(FlipType flipType);
+        FluentImage In(FlipType flipType);
     }
 }

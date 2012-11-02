@@ -1,17 +1,17 @@
-﻿using System.Drawing;
-
-namespace ImageNet.Core.Operations
+﻿namespace ImageNet.Core.Operations
 {
+    using System.Drawing;
+
     internal class FlipImpl : IFlip
     {
-        private readonly ImageBuilder builder;
+        private readonly FluentImage builder;
 
-        public FlipImpl(ImageBuilder builder)
+        public FlipImpl(FluentImage builder)
         {
             this.builder = builder;
         }
 
-        public ImageBuilder In(FlipType flipType)
+        public FluentImage In(FlipType flipType)
         {
             var flip = (flipType == FlipType.Horizontal) ? RotateFlipType.RotateNoneFlipX : RotateFlipType.RotateNoneFlipY;
             builder.Image.RotateFlip(flip);

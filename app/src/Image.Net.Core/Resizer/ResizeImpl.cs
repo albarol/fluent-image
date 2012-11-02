@@ -5,14 +5,14 @@ namespace ImageNet.Core.Resizer
 {
     internal class ResizeImpl : IResize
     {
-        private readonly ImageBuilder builder;
+        private readonly FluentImage builder;
         
-        internal ResizeImpl(ImageBuilder builder)
+        internal ResizeImpl(FluentImage builder)
         {
             this.builder = builder;
         }
         
-        public ImageBuilder Scale(int size)
+        public FluentImage Scale(int size)
         {
             var greaterSide = (builder.Current.Width >= builder.Current.Height)
                                   ? builder.Current.Width
@@ -21,7 +21,7 @@ namespace ImageNet.Core.Resizer
             return Percentual(percentual);
         }
 
-        public ImageBuilder Percentual(float percentual)
+        public FluentImage Percentual(float percentual)
         {
             var height = Convert.ToInt32(builder.Current.Height * percentual);
             var width = Convert.ToInt32(builder.Current.Width * percentual);
@@ -29,26 +29,26 @@ namespace ImageNet.Core.Resizer
             return builder;
         }
 
-        public ImageBuilder Width(int value)
+        public FluentImage Width(int value)
         {
             builder.Image = Resize(value, builder.Current.Height);
             return builder;
         }
 
-        public ImageBuilder Height(int value)
+        public FluentImage Height(int value)
         {
             builder.Image = Resize(builder.Current.Width, value);
             return builder;
         }
 
-        public ImageBuilder ToSize(Size size)
+        public FluentImage ToSize(Size size)
         {
             if(!size.IsEmpty)
                 builder.Image = Resize(size.Width, size.Height);
             return builder;
         }
 
-        public ImageBuilder Crop(Rectangle rectangle)
+        public FluentImage Crop(Rectangle rectangle)
         {
             var bitmap = new Bitmap(rectangle.Width, rectangle.Height);
             Graphics graphics = Graphics.FromImage(bitmap);

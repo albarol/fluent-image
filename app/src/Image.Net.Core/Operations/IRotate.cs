@@ -2,9 +2,9 @@
 {
     public interface IRotate
     {
-        ImageBuilder Left(int degrees);
-        ImageBuilder Left(RotateType rotateType);
-        ImageBuilder Right(int degrees);
-        ImageBuilder Right(RotateType rotateType);
+        FluentImage Left(int degrees);
+        FluentImage Left(RotateType rotateType);
+        FluentImage Right(int degrees);
+        FluentImage Right(RotateType rotateType);
     }
 }

@@ -12,19 +12,19 @@
     [TestFixture]
     public class EdgeFilteringFixture
     {
-        private ImageBuilder builder;
+        private FluentImage builder;
         private KeyValuePair<string, string> resource = new KeyValuePair<string, string>("Ninféias.jpg", "Ninféias_NEW.jpg");
 
         [SetUp]
         public void SetUp()
         {
-            this.builder = new ImageBuilder(Image.FromFile(IoHelper.ResolveUrl(this.resource.Key)));
+            this.builder = FluentImage.Create(IoHelper.ResolveUrl(this.resource.Key));
         }
 
         [TearDown]
         public void TearDown()
         {
-            this.builder.Current.Save(IoHelper.ResolveUrl(this.resource.Value));
+            this.builder.Save(IoHelper.ResolveUrl(this.resource.Value));
         }
 
         [Test]

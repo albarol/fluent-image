@@ -11,18 +11,18 @@
     [TestFixture]
     public class ConvolutionFilteringFixture
     {
-        private ImageBuilder builder;
+        private FluentImage builder;
 
         [SetUp]
         public void SetUp()
         {
-            this.builder = new ImageBuilder(Image.FromFile(IoHelper.ResolveUrl("Ninféias.jpg")));
+            this.builder = FluentImage.Create(IoHelper.ResolveUrl("Ninféias.jpg"));
         }
 
         [TearDown]
         public void TearDown()
         {
-            this.builder.Current.Save(IoHelper.ResolveUrl("Inverno_NEW.jpg"));
+            this.builder.Save(IoHelper.ResolveUrl("Inverno_NEW.jpg"));
         }
 
         [Test]

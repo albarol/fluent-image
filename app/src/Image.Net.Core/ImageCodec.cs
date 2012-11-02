@@ -1,13 +1,40 @@
-﻿using System.Drawing.Imaging;
-using System.Linq;
-
-namespace ImageNet.Core
+﻿namespace ImageNet.Core
 {
+    using System.Drawing.Imaging;
+    using System.Linq;
+
     internal class ImageCodec
     {
         private static readonly ImageCodecInfo[] Codecs = ImageCodecInfo.GetImageEncoders();
 
-        private ImageCodec() { }
+        private ImageCodec()
+        {
+        }
+
+        public static ImageCodecInfo Jpeg
+        {
+            get { return Codecs.First(c => c.MimeType == "image/jpeg"); }
+        }
+
+        public static ImageCodecInfo Bmp
+        {
+            get { return Codecs.First(c => c.MimeType == "image/bmp"); }
+        }
+
+        public static ImageCodecInfo Gif
+        {
+            get { return Codecs.First(c => c.MimeType == "image/gif"); }
+        }
+
+        public static ImageCodecInfo Tiff
+        {
+            get { return Codecs.First(c => c.MimeType == "image/tiff"); }
+        }
+
+        public static ImageCodecInfo Png
+        {
+            get { return Codecs.First(c => c.MimeType == "image/png"); }
+        }
 
         public static ImageCodecInfo FromOutputFormat(OutputFormat outputFormat)
         {
@@ -24,31 +51,6 @@ namespace ImageNet.Core
                 default:
                     return Jpeg;
             }
-        }
-        
-        public static ImageCodecInfo Jpeg
-        {
-            get { return Codecs.Where(c => c.MimeType == "image/jpeg").First(); }
-        }
-        
-        public static ImageCodecInfo Bmp
-        {
-            get { return Codecs.Where(c => c.MimeType == "image/bmp").First(); }
-        }
-
-        public static ImageCodecInfo Gif
-        {
-            get { return Codecs.Where(c => c.MimeType == "image/gif").First(); }
-        }
-
-        public static ImageCodecInfo Tiff
-        {
-            get { return Codecs.Where(c => c.MimeType == "image/tiff").First(); }
-        }
-
-        public static ImageCodecInfo Png
-        {
-            get { return Codecs.Where(c => c.MimeType == "image/png").First(); }
         }
     }
 }

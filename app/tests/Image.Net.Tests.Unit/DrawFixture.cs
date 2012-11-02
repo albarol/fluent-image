@@ -13,39 +13,39 @@
     [TestFixture]
     public class DrawFixture
     {
-        private ImageBuilder builder;
+        private FluentImage image;
 
         [SetUp]
         public void SetUp()
         {
-            this.builder = new ImageBuilder(Image.FromFile(IoHelper.ResolveUrl("Inverno.jpg")));
+            this.image = FluentImage.Create(IoHelper.ResolveUrl("Inverno.jpg"));
         }
 
         [TearDown]
         public void TearDown()
         {
-            this.builder.Current.Save(IoHelper.ResolveUrl("Inverno_NEW.bmp"));
+            this.image.Save(IoHelper.ResolveUrl("Inverno_NEW.bmp"));
         }
         
         [Test]
         public void AddBorder_ShouldApplyBorderInImage()
         {
-            this.builder.Draw.AddBorder(new BorderStyle(Color.DodgerBlue) { BorderWidth = 20, DashStyle = DashStyle.Dot });
+            this.image.Draw.AddBorder(new BorderStyle(Color.DodgerBlue) { BorderWidth = 20, DashStyle = DashStyle.Dot });
         }
 
         [Test]
         public void ApplyImage_ShouldApplyPartOfImage()
         {
-            var partOfImage = new ImageBuilder(Image.FromFile(IoHelper.ResolveUrl("Montanhas azuis.jpg")));
+            var partOfImage = FluentImage.Create(IoHelper.ResolveUrl("Montanhas azuis.jpg"));
             partOfImage.Resize.Crop(new Rectangle(100, 0, 200, partOfImage.Current.Height));
-            this.builder.Draw.ApplyImage(partOfImage);
+            this.image.Draw.ApplyImage(partOfImage);
         }
 
         [Test]
         public void ApplyImage_ShouldApplyImageInCenter()
         {
-            var partOfImage = new ImageBuilder(Image.FromFile(IoHelper.ResolveUrl("Montanhas azuis.jpg")));
-            this.builder.Draw.ApplyImage(partOfImage, new Rectangle(Convert.ToInt32(this.builder.Current.Width / 2), Convert.ToInt32(this.builder.Current.Height / 2), 200, 200));
+            var partOfImage = FluentImage.Create(IoHelper.ResolveUrl("Montanhas azuis.jpg"));
+            this.image.Draw.ApplyImage(partOfImage, new Rectangle(Convert.ToInt32(this.image.Current.Width / 2), Convert.ToInt32(this.image.Current.Height / 2), 200, 200));
         }
     }
 }

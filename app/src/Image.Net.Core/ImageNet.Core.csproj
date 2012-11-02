@@ -88,11 +88,11 @@
     <Compile Include="Filtering\Range.cs" />
     <Compile Include="Filtering\Rgb.cs" />
     <Compile Include="Filtering\Smooting\SmoothFilter.cs" />
-    <Compile Include="IImage.cs" />
+    <Compile Include="IRawImage.cs" />
     <Compile Include="ImageCodec.cs" />
-    <Compile Include="ImageDecorator.cs" />
+    <Compile Include="RawImage.cs" />
     <Compile Include="Operations\FlipImpl.cs" />
-    <Compile Include="ImageBuilder.cs" />
+    <Compile Include="FluentImage.cs" />
     <Compile Include="Operations\FlipType.cs" />
     <Compile Include="Operations\IFlip.cs" />
     <Compile Include="Operations\IRotate.cs" />

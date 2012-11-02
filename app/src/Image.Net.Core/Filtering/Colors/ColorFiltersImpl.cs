@@ -41,5 +41,10 @@
         {
             return new InvertFilter();
         }
+
+        public IFilter RemappingColor(Rgb rgb)
+        {
+            return new RemapingColorFilter(rgb.Red, rgb.Green, rgb.Blue);
+        }
     }
 }

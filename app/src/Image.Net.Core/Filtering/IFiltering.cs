@@ -2,6 +2,6 @@
 {
     public interface IFiltering
     {
-        ImageBuilder Add(params IFilter[] filter);
+        FluentImage Add(params IFilter[] filter);
     }
 }

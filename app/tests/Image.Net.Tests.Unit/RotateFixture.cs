@@ -12,12 +12,12 @@
     [TestFixture]
     public class RotateFixture
     {
-        private ImageBuilder builder;
+        private FluentImage builder;
 
         [SetUp]
         public void SetUp()
         {
-            this.builder = new ImageBuilder(Image.FromFile(IoHelper.ResolveUrl("Inverno.jpg")));
+            this.builder = FluentImage.Create(IoHelper.ResolveUrl("Inverno.jpg"));
         }
         
         [Test]

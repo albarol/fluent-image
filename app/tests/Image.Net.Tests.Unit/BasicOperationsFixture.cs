@@ -12,18 +12,43 @@
     [TestFixture]
     public class BasicOperationsFixture
     {
-        private ImageBuilder builder;
+        private FluentImage builder;
 
         [SetUp]
         public void SetUp()
         {
-            
+        }
+
+        [Test]
+        public void Constructor_CanCreateFluentImageByImage()
+        {
+            // Arrange:
+            var image = FluentImage.Create(Image.FromFile(IoHelper.ResolveUrl("Inverno.jpg")));
+
+            // Act:
+            var result = image.ToString();
+
+            // Assert:
+            result.Should().Not.Be.Empty();
+        }
+
+        [Test]
+        public void Constructor_CanCreateFluentImageByFilename()
+        {
+            // Arrange:
+            var image = FluentImage.Create(IoHelper.ResolveUrl("Inverno.jpg"));
+
+            // Act:
+            var result = image.ToString();
+
+            // Assert:
+            result.Should().Not.Be.Empty();
         }
         
         [Test]
         public void ToString_GetImageInBase64Format()
         {
-            this.builder = new ImageBuilder(Image.FromFile(IoHelper.ResolveUrl("Inverno.jpg")));
+            this.builder = FluentImage.Create(IoHelper.ResolveUrl("Inverno.jpg"));
             this.builder.Current.ToString().Should().Not.Be.Empty();
         }
     }

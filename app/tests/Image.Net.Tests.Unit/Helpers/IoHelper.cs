@@ -16,10 +16,5 @@ namespace ImageNet.Tests.Unit.Helpers
                     fileName
             );
         }
-
-        public void Bla()
-        {
-            ImageNet.Core.ImageBuilder img = new ImageBuilder(null);
-        }
     }
 }

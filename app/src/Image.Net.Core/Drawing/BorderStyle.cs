@@ -1,8 +1,8 @@
-﻿using System.Drawing;
-using System.Drawing.Drawing2D;
-
-namespace ImageNet.Core.Drawing
+﻿namespace ImageNet.Core.Drawing
 {
+    using System.Drawing;
+    using System.Drawing.Drawing2D;
+
     public struct BorderStyle
     {
         private readonly Color color;
@@ -10,16 +10,16 @@ namespace ImageNet.Core.Drawing
         public BorderStyle(Color color) : this()
         {
             this.color = color;
-            BorderWidth = 0;
-            DashStyle = DashStyle.Solid;
+            this.BorderWidth = 0;
+            this.DashStyle = DashStyle.Solid;
         }
 
         public Pen Pen
         {
             get
             {
-                var widthInPixelUnit = BorderWidth*2;
-                return new Pen(color) { Width = widthInPixelUnit, DashStyle = DashStyle };
+                var widthInPixelUnit = this.BorderWidth * 2;
+                return new Pen(this.color) { Width = widthInPixelUnit, DashStyle = DashStyle };
             }
         }
 

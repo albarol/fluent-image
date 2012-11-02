@@ -11,18 +11,18 @@
     [TestFixture]
     public class ColorFilteringFixture
     {
-        private ImageBuilder builder;
+        private FluentImage builder;
 
         [SetUp]
         public void SetUp()
         {
-            this.builder = new ImageBuilder(Image.FromFile(IoHelper.ResolveUrl("Pôr-do-sol.jpg")));
+            this.builder = FluentImage.Create(IoHelper.ResolveUrl("Pôr-do-sol.jpg"));
         }
 
         [TearDown]
         public void TearDown()
         {
-            this.builder.Current.Save(IoHelper.ResolveUrl("Inverno_NEW.jpg"));
+            this.builder.Save(IoHelper.ResolveUrl("Inverno_NEW.jpg"));
         }
 
         [Test]

@@ -10,5 +10,6 @@
         IFilter Gamma(Rgb rgb);
         IFilter Sepia();
         IFilter Invert();
+        IFilter RemappingColor(Rgb rgb);
     }
 }
