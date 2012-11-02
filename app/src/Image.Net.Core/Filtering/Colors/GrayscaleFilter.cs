@@ -2,18 +2,23 @@
 {
     internal class GrayscaleFilter : BaseFilter
     {
-        protected double RedCoefficient = .299;
-        protected double GreenCoefficient = .587;
-        protected double BlueCoefficient = .114;
-
+        public GrayscaleFilter()
+        {
+            this.RedCoefficient = .299;
+            this.GreenCoefficient = .587;
+            this.BlueCoefficient = .114;
+        }
+        
         protected GrayscaleFilter(double redCoefficient, double greenCoefficient, double blueCoefficient)
         {
-            RedCoefficient = redCoefficient;
-            GreenCoefficient = greenCoefficient;
-            BlueCoefficient = blueCoefficient;
+            this.RedCoefficient = redCoefficient;
+            this.GreenCoefficient = greenCoefficient;
+            this.BlueCoefficient = blueCoefficient;
         }
 
-        public GrayscaleFilter() { }
+        protected double RedCoefficient { get; set; }
+        protected double GreenCoefficient { get; set; }
+        protected double BlueCoefficient { get; set; }
         
         protected override unsafe bool ApplyFilter()
         {
@@ -22,23 +27,23 @@
             {
                 for (int x = 0; x < Bitmap.Width; ++x)
                 {
-                    var grayscale = GetGrayscaleToPixel(pointer);
+                    var grayscale = this.GetGrayscaleToPixel(pointer);
                     pointer[Rgb.RedPixel] = grayscale;
                     pointer[Rgb.GreenPixel] = grayscale;
                     pointer[Rgb.BluePixel] = grayscale;
-                    pointer += PixelSize;
+                    pointer += this.PixelSize;
                 }
-                pointer += Offset;
+                pointer += this.Offset;
             }
-            Bitmap.UnlockBits(BitmapData);
+            Bitmap.UnlockBits(this.BitmapData);
             return true;
         }
 
         private unsafe byte GetGrayscaleToPixel(byte* pointer)
         {
-            return (byte)((RedCoefficient * pointer[Rgb.RedPixel]) +
-                          (GreenCoefficient * pointer[Rgb.GreenPixel]) +
-                          (BlueCoefficient * pointer[Rgb.BluePixel]));
+            return (byte)((this.RedCoefficient * pointer[Rgb.RedPixel]) +
+                          (this.GreenCoefficient * pointer[Rgb.GreenPixel]) +
+                          (this.BlueCoefficient * pointer[Rgb.BluePixel]));
         }
     }
 }

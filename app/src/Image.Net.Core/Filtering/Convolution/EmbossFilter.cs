@@ -4,11 +4,11 @@
     {
         public EmbossFilter()
         {
-            ConvertMatrix = new ConvertMatrix();
-            ConvertMatrix.SetAll(-1);
-            ConvertMatrix.TopMid = ConvertMatrix.MidLeft = ConvertMatrix.MidRight = ConvertMatrix.BottomMid = 0;
-            ConvertMatrix.Pixel = 4;
-            ConvertMatrix.Offset = 127;
+            this.ConvertMatrix = new ConvertMatrix();
+            this.ConvertMatrix.SetAll(-1);
+            this.ConvertMatrix.TopMid = this.ConvertMatrix.MidLeft = this.ConvertMatrix.MidRight = this.ConvertMatrix.BottomMid = 0;
+            this.ConvertMatrix.Pixel = 4;
+            this.ConvertMatrix.Offset = 127;
         }
     }
 }

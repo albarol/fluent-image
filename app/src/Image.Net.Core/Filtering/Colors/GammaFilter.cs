@@ -1,7 +1,8 @@
-﻿using System;
-
-namespace ImageNet.Core.Filtering.Colors
+﻿namespace ImageNet.Core.Filtering.Colors
 {
+    using System;
+    using System.Linq;
+
     internal class GammaFilter : BaseFilter
     {
         private readonly double red;
@@ -17,19 +18,20 @@ namespace ImageNet.Core.Filtering.Colors
         
         protected override unsafe bool ApplyFilter()
         {
-            if (IsValidRange(red)) return false;
-            if (IsValidRange(green)) return false;
-            if (IsValidRange(blue)) return false;
-
+            if (this.ContainsInvalidPixel())
+            {
+                return false;
+            }
+            
             var redGamma = new byte[256];
             var greenGamma = new byte[256];
             var blueGamma = new byte[256];
 
             for (int index = 0; index < redGamma.Length; ++index)
             {
-                redGamma[index] = CalculateGamma(index, red);
-                greenGamma[index] = CalculateGamma(index, green);
-                blueGamma[index] = CalculateGamma(index, blue);
+                redGamma[index] = this.CalculateGamma(index, this.red);
+                greenGamma[index] = this.CalculateGamma(index, this.green);
+                blueGamma[index] = this.CalculateGamma(index, this.blue);
             }
 
             byte* pointer = (byte*)Scan.ToPointer();
@@ -43,20 +45,21 @@ namespace ImageNet.Core.Filtering.Colors
                     pointer[Rgb.BluePixel] = blueGamma[pointer[Rgb.BluePixel]];
                     pointer += 3;
                 }
-                pointer += Offset;
+                pointer += this.Offset;
             }
-            Bitmap.UnlockBits(BitmapData);
+            Bitmap.UnlockBits(this.BitmapData);
             return true;
         }
 
         private byte CalculateGamma(int index, double value)
         {
-            return (byte) Math.Min(255, (int) ((255.0*Math.Pow(index/255.0, 1.0/value)) + 0.5));
+            return (byte)Math.Min(255, (int)((255.0 * Math.Pow(index / 255.0, 1.0 / value)) + 0.5));
         }
 
-        private bool IsValidRange(double value)
+        private bool ContainsInvalidPixel()
         {
-            return value < .2 || value > 5;
+            var rgb = new[] { this.red, this.blue, this.green };
+            return rgb.Any(item => item < .2 || item > 5);
         }
     }
 }

@@ -1,12 +1,7 @@
 ﻿namespace ImageNet.Core.Filtering.Colors
 {
-    internal class ColorFiltersImpl : IColorFilters
+    internal class ColorFilters : IColorFilters
     {
-        public IFilter RemapingColor(Rgb rgb)
-        {
-            return new RemapingColorFilter(rgb.Red, rgb.Green, rgb.Blue);
-        }
-
         public IFilter Grayscale()
         {
             return new GrayscaleFilter();

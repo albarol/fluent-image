@@ -17,19 +17,18 @@
                     pointer[Rgb.RedPixel] = (byte)((sepia > 206) ? 255 : sepia + 49);
                     pointer[Rgb.GreenPixel] = (byte)((sepia < 14) ? 0 : sepia - 14);
                     pointer[Rgb.BluePixel] = (byte)((sepia < 56) ? 0 : sepia - 56);
-                    pointer += PixelSize;
+                    pointer += this.PixelSize;
                 }
-                pointer += Offset;
+                pointer += this.Offset;
             }
-            Bitmap.UnlockBits(BitmapData);
+            Bitmap.UnlockBits(this.BitmapData);
             return true;
         }
 
         private static unsafe byte CalculateSepiaToPixel(byte* pointer)
         {
-            return (byte)((RedCoefficient * pointer[Rgb.RedPixel]) 
-                          + (GreenCoefficient * pointer[Rgb.GreenPixel]) 
-                          + BlueCoefficient * pointer[Rgb.BluePixel]);
+            var sepiaToPixel = (RedCoefficient * pointer[Rgb.RedPixel]) + (GreenCoefficient * pointer[Rgb.GreenPixel]) + (BlueCoefficient * pointer[Rgb.BluePixel]);
+            return (byte)sepiaToPixel;
         }
     }
 }

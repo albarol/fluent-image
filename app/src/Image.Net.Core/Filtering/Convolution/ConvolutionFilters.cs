@@ -1,6 +1,6 @@
 ﻿namespace ImageNet.Core.Filtering.Convolution
 {
-    internal class ConvolutionFiltersImpl : IConvolutionFilters
+    internal class ConvolutionFilters : IConvolutionFilters
     {
         public IFilter Blur()
         {

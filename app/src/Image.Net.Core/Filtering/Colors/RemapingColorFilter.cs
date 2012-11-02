@@ -2,6 +2,8 @@
 
 namespace ImageNet.Core.Filtering.Colors
 {
+    using System.Linq;
+
     internal class RemapingColorFilter : BaseFilter
     {
         private readonly int red;
@@ -17,30 +19,34 @@ namespace ImageNet.Core.Filtering.Colors
         
         protected override unsafe bool ApplyFilter()
         {
-            if (IsValidRange(red)) return false;
-            if (IsValidRange(green)) return false;
-            if (IsValidRange(blue)) return false;
+            if (this.ContainsInvalidPixel())
+            {
+                return false;
+            }
 
-            byte* pointer = (byte*) Scan.ToPointer();
+            byte* pointer = (byte*)Scan.ToPointer();
 
             for (int y = 0; y < Bitmap.Height; ++y)
             {
                 for (int x = 0; x < Bitmap.Width; ++x)
                 {
-                    pointer[Rgb.RedPixel] = CalculateColor(pointer[Rgb.RedPixel], red);
-                    pointer[Rgb.GreenPixel] = CalculateColor(pointer[Rgb.GreenPixel], green);
-                    pointer[Rgb.BluePixel] = CalculateColor(pointer[Rgb.BluePixel], blue);
-                    pointer += PixelSize;
+                    pointer[Rgb.RedPixel] = this.CalculateColor(pointer[Rgb.RedPixel], red);
+                    pointer[Rgb.GreenPixel] = this.CalculateColor(pointer[Rgb.GreenPixel], green);
+                    pointer[Rgb.BluePixel] = this.CalculateColor(pointer[Rgb.BluePixel], blue);
+                    pointer += this.PixelSize;
                 }
-                pointer += Offset;
+
+                pointer += this.Offset;
             }
-            Bitmap.UnlockBits(BitmapData);
+
+            Bitmap.UnlockBits(this.BitmapData);
             return true;
         }
 
-        private bool IsValidRange(int value)
+        private bool ContainsInvalidPixel()
         {
-            return value < -255 || value > 255;
+            var rgb = new[] { this.red, this.blue, this.green };
+            return rgb.Any(item => item < -255 || item > 255);
         }
 
         private byte CalculateColor(int pointer, int color)

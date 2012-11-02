@@ -2,7 +2,6 @@
 {
     public interface IColorFilters
     {
-        IFilter RemapingColor(Rgb rgb);
         IFilter Grayscale();
         IFilter GrayscaleRmy();
         IFilter GrayscaleBt709();

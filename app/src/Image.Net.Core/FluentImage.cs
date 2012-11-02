@@ -44,7 +44,7 @@
 
         public IResize Resize
         {
-            get { return new ResizeImpl(this); }
+            get { return new Resize(this); }
         }
 
         public IRotate Rotate

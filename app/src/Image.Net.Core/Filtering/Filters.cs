@@ -14,12 +14,12 @@
         
         public static IColorFilters Color
         {
-            get { return colorFilters ?? (colorFilters = new ColorFiltersImpl()); }
+            get { return colorFilters ?? (colorFilters = new ColorFilters()); }
         }
 
         public static IConvolutionFilters Convolution
         {
-            get { return convolutionFilters ?? (convolutionFilters = new ConvolutionFiltersImpl()); }
+            get { return convolutionFilters ?? (convolutionFilters = new ConvolutionFilters()); }
         }
 
         public static IHslFilters Hsl

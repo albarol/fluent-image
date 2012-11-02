@@ -13,9 +13,9 @@
                     pointer[Rgb.BluePixel] = (byte)(255 - pointer[Rgb.BluePixel]);
                     ++pointer;
                 }
-                pointer += Offset;
+                pointer += this.Offset;
             }
-            Bitmap.UnlockBits(BitmapData);
+            Bitmap.UnlockBits(this.BitmapData);
             return true;
         }
     }

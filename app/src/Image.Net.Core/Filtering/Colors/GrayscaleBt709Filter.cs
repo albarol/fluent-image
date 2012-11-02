@@ -4,7 +4,6 @@
     {
         public GrayscaleBt709Filter() : base(0.2125, 0.7154, 0.0721)
         {
-            
         }
     }
 }

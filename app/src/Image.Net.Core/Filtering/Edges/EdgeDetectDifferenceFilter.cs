@@ -10,12 +10,11 @@
         {
             this.threshold = threshold;
         }
-
-
+        
         protected override unsafe bool ApplyFilter()
         {
-            byte* pointer = (byte*)BitmapData.Scan0.ToPointer();
-            byte* sourcePointer = (byte*)BitmapDataSource.Scan0.ToPointer();
+            var pointer = (byte*)BitmapData.Scan0.ToPointer();
+            var sourcePointer = (byte*)BitmapDataSource.Scan0.ToPointer();
 
             int maxWidth = Bitmap.Width * PixelSize;
 
@@ -24,22 +23,22 @@
 
             for (int row = 1; row < Bitmap.Height - 1; ++row)
             {
-                pointer += PixelSize;
-                sourcePointer += PixelSize;
+                pointer += this.PixelSize;
+                sourcePointer += this.PixelSize;
 
-                for (int pixel = PixelSize; pixel < maxWidth - PixelSize; ++pixel)
+                for (int pixel = PixelSize; pixel < maxWidth - this.PixelSize; ++pixel)
                 {
                     pointer[Rgb.BluePixel] = this.GetHigherPixel(sourcePointer);
                     ++pointer;
                     ++sourcePointer;
                 }
 
-                pointer += PixelSize + Offset;
-                sourcePointer += PixelSize + Offset;
+                pointer += this.PixelSize + this.Offset;
+                sourcePointer += this.PixelSize + this.Offset;
             }
 
-            Bitmap.UnlockBits(BitmapData);
-            BitmapSource.UnlockBits(BitmapDataSource);
+            Bitmap.UnlockBits(this.BitmapData);
+            BitmapSource.UnlockBits(this.BitmapDataSource);
 
             return true;
         }

@@ -5,11 +5,11 @@
         public BlurFilter()
         {
             const int Weight = 4;
-            ConvertMatrix = new ConvertMatrix();
-            ConvertMatrix.SetAll(1);
-            ConvertMatrix.Pixel = Weight;
-            ConvertMatrix.TopMid = ConvertMatrix.MidLeft = ConvertMatrix.MidRight = ConvertMatrix.BottomMid = 2;
-            ConvertMatrix.Factor = Weight + 12;
+            this.ConvertMatrix = new ConvertMatrix();
+            this.ConvertMatrix.SetAll(1);
+            this.ConvertMatrix.Pixel = Weight;
+            this.ConvertMatrix.TopMid = this.ConvertMatrix.MidLeft = this.ConvertMatrix.MidRight = this.ConvertMatrix.BottomMid = 2;
+            this.ConvertMatrix.Factor = Weight + 12;
         }
     }
 }
