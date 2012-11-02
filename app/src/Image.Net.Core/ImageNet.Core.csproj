@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Drawing\BorderStyle.cs" />
-    <Compile Include="Drawing\DrawImpl.cs" />
+    <Compile Include="Drawing\Draw.cs" />
     <Compile Include="Filtering\Colors\ColorFiltersImpl.cs" />
     <Compile Include="Filtering\Colors\IColorFilters.cs" />
     <Compile Include="Filtering\Convolution\ConvolutionFiltersImpl.cs" />

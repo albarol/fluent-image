@@ -59,7 +59,7 @@
 
         public IDraw Draw
         {
-            get { return new DrawImpl(this); }
+            get { return new Draw(this); }
         }
 
         public IFiltering Filters
