@@ -1,6 +1,6 @@
 ﻿namespace ImageNet.Core.Filtering.Colors
 {
-    internal class ColorFilters : IColorFilters
+    internal class ColorFiltersFactory : IColorFilters
     {
         public IFilter Grayscale()
         {

@@ -1,7 +1,6 @@
 ﻿namespace ImageNet.Tests.Unit.Filtering
 {
     using System.Collections.Generic;
-    using System.Drawing;
 
     using ImageNet.Core;
     using ImageNet.Core.Filtering;

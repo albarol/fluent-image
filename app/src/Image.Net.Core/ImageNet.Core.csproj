@@ -46,21 +46,21 @@
   <ItemGroup>
     <Compile Include="Drawing\BorderStyle.cs" />
     <Compile Include="Drawing\Draw.cs" />
-    <Compile Include="Filtering\Colors\ColorFilters.cs" />
+    <Compile Include="Filtering\Colors\ColorFiltersFactory.cs" />
     <Compile Include="Filtering\Colors\IColorFilters.cs" />
-    <Compile Include="Filtering\Convolution\ConvolutionFilters.cs" />
+    <Compile Include="Filtering\Convolution\ConvolutionFiltersFactory.cs" />
     <Compile Include="Filtering\Convolution\IConvolutionFilters.cs" />
     <Compile Include="Filtering\Edges\EdgeDetectDifferenceFilter.cs" />
     <Compile Include="Filtering\Edges\EdgeDetectHorizontalFilter.cs" />
     <Compile Include="Filtering\Edges\EdgeDetectVerticalFilter.cs" />
     <Compile Include="Filtering\Edges\EdgeEnhanceFilter.cs" />
-    <Compile Include="Filtering\Edges\EdgeFiltersImpl.cs" />
+    <Compile Include="Filtering\Edges\EdgeFiltersFactory.cs" />
     <Compile Include="Filtering\Edges\EdgetDetectHomogenityFilter.cs" />
     <Compile Include="Filtering\Edges\IEdgeFilters.cs" />
-    <Compile Include="Filtering\FilteringImpl.cs" />
+    <Compile Include="Filtering\FilterList.cs" />
     <Compile Include="Filtering\Filters.cs" />
     <Compile Include="Filtering\Hsl.cs" />
-    <Compile Include="Filtering\Hsls\HslFiltersImpl.cs" />
+    <Compile Include="Filtering\Hsls\HslFiltersFactory.cs" />
     <Compile Include="Filtering\Hsls\HueModifierFilter.cs" />
     <Compile Include="Filtering\Hsls\IHslFilters.cs" />
     <Compile Include="Filtering\Hsls\SaturationFilter.cs" />
@@ -87,7 +87,9 @@
     <Compile Include="Filtering\Convolution\SharpenFilter.cs" />
     <Compile Include="Filtering\Range.cs" />
     <Compile Include="Filtering\Rgb.cs" />
+    <Compile Include="Filtering\Smooting\ISmootingFilter.cs" />
     <Compile Include="Filtering\Smooting\SmoothFilter.cs" />
+    <Compile Include="Filtering\Smooting\SmootingFiltersFactory.cs" />
     <Compile Include="IRawImage.cs" />
     <Compile Include="ImageCodec.cs" />
     <Compile Include="RawImage.cs" />

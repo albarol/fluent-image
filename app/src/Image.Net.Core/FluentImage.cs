@@ -21,18 +21,7 @@
             this.Image = image;
             this.current = new RawImage(this);
             this.Encoders = new List<EncoderParameter>();
-            this.Filtering = new FilteringImpl(this);
-        }
-
-        public static FluentImage Create(Image image)
-        {
-            return new FluentImage(image);
-        }
-
-        public static FluentImage Create(string filename)
-        {
-            var image = Image.FromFile(filename);
-            return new FluentImage(image);
+            this.Filtering = new FilterList(this);
         }
 
         public IList<EncoderParameter> Encoders { get; private set; }
@@ -68,7 +57,7 @@
         }
 
         internal Image Image { get; set; }
-        internal FilteringImpl Filtering { get; set; }
+        internal FilterList Filtering { get; set; }
 
         public static implicit operator Image(FluentImage builder)
         {
@@ -99,6 +88,17 @@
             var imageConverter = new ImageConverter();
             var imageBytes = (byte[])imageConverter.ConvertTo(this.Image, typeof(byte[]));
             return imageBytes != null ? Convert.ToBase64String(imageBytes) : string.Empty;
+        }
+
+        public static FluentImage Create(Image image)
+        {
+            return new FluentImage(image);
+        }
+
+        public static FluentImage Create(string filename)
+        {
+            var image = Image.FromFile(filename);
+            return new FluentImage(image);
         }
     }
 }

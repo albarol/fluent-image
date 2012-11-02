@@ -1,6 +1,6 @@
 ﻿namespace ImageNet.Core.Filtering.Edges
 {
-    internal class EdgeFiltersImpl : IEdgeFilters
+    internal class EdgeFiltersFactory : IEdgeFilters
     {
         public IFilter Quick()
         {

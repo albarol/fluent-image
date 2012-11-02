@@ -1,6 +1,6 @@
 ﻿namespace ImageNet.Core.Filtering.Hsls
 {
-    public class HslFiltersImpl : IHslFilters
+    internal class HslFiltersFactory : IHslFilters
     {
         public IFilter Brightness(int luminance)
         {

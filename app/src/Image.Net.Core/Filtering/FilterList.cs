@@ -2,11 +2,11 @@
 {
     using System.Collections.Generic;
 
-    internal class FilteringImpl : IFiltering
+    internal class FilterList : IFiltering
     {
         private readonly FluentImage builder;
 
-        public FilteringImpl(FluentImage builder)
+        public FilterList(FluentImage builder)
         {
             this.builder = builder;
             this.Filters = new List<IFilter>();
