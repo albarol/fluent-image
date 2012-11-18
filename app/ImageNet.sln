@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImagesToResize", "ImagesToR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageNet.Tests.Unit", "tests\Image.Net.Tests.Unit\ImageNet.Tests.Unit.csproj", "{B3772C0F-23F8-4C20-86C4-0F33CA9D1EAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageNet.Core", "src\Image.Net.Core\ImageNet.Core.csproj", "{4EA2F945-2A83-4BCC-98DF-DB702217B91F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageNet", "src\ImageNet\ImageNet.csproj", "{4EA2F945-2A83-4BCC-98DF-DB702217B91F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

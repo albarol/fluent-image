@@ -71,7 +71,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Image.Net.Core\ImageNet.Core.csproj">
+    <ProjectReference Include="..\..\src\ImageNet\ImageNet.csproj">
       <Project>{4EA2F945-2A83-4BCC-98DF-DB702217B91F}</Project>
       <Name>Image.Net.Core</Name>
     </ProjectReference>

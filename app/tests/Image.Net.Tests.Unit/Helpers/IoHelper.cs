@@ -1,6 +1,4 @@
-﻿using ImageNet.Core;
-
-namespace ImageNet.Tests.Unit.Helpers
+﻿namespace ImageNet.Tests.Unit.Helpers
 {
     public class IoHelper
     {

@@ -1,9 +1,6 @@
 ﻿namespace ImageNet.Tests.Unit
 {
-    using System.Drawing;
-
-    using ImageNet.Core;
-    using ImageNet.Core.Operations;
+    using ImageNet.Operations;
     using ImageNet.Tests.Unit.Helpers;
 
     using NUnit.Framework;

@@ -2,7 +2,6 @@
 {
     using System.Drawing;
 
-    using ImageNet.Core;
     using ImageNet.Tests.Unit.Helpers;
 
     using NUnit.Framework;

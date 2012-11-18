@@ -1,7 +1,6 @@
 ﻿namespace ImageNet.Tests.Unit.Filtering
 {
-    using ImageNet.Core;
-    using ImageNet.Core.Filtering;
+    using ImageNet.Filtering;
     using ImageNet.Tests.Unit.Helpers;
 
     using NUnit.Framework;
