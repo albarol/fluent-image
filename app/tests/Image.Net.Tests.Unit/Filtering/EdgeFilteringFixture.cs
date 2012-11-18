@@ -2,8 +2,7 @@
 {
     using System.Collections.Generic;
 
-    using ImageNet.Core;
-    using ImageNet.Core.Filtering;
+    using ImageNet.Filtering;
     using ImageNet.Tests.Unit.Helpers;
 
     using NUnit.Framework;

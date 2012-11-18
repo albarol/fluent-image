@@ -4,8 +4,7 @@
     using System.Drawing;
     using System.Drawing.Drawing2D;
 
-    using ImageNet.Core;
-    using ImageNet.Core.Drawing;
+    using ImageNet.Drawing;
     using ImageNet.Tests.Unit.Helpers;
 
     using NUnit.Framework;

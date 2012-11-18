@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4EA2F945-2A83-4BCC-98DF-DB702217B91F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImageNet</RootNamespace>
+    <AssemblyName>ImageNet</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Drawing\BorderStyle.cs" />
+    <Compile Include="Drawing\Draw.cs" />
+    <Compile Include="Filtering\Colors\ColorFiltersFactory.cs" />
+    <Compile Include="Filtering\Colors\IColorFilters.cs" />
+    <Compile Include="Filtering\Convolution\ConvolutionFiltersFactory.cs" />
+    <Compile Include="Filtering\Convolution\IConvolutionFilters.cs" />
+    <Compile Include="Filtering\Edges\EdgeDetectDifferenceFilter.cs" />
+    <Compile Include="Filtering\Edges\EdgeDetectHorizontalFilter.cs" />
+    <Compile Include="Filtering\Edges\EdgeDetectVerticalFilter.cs" />
+    <Compile Include="Filtering\Edges\EdgeEnhanceFilter.cs" />
+    <Compile Include="Filtering\Edges\EdgeFiltersFactory.cs" />
+    <Compile Include="Filtering\Edges\EdgetDetectHomogenityFilter.cs" />
+    <Compile Include="Filtering\Edges\IEdgeFilters.cs" />
+    <Compile Include="Filtering\FilterList.cs" />
+    <Compile Include="Filtering\Filters.cs" />
+    <Compile Include="Filtering\Hsl.cs" />
+    <Compile Include="Filtering\Hsls\HslFiltersFactory.cs" />
+    <Compile Include="Filtering\Hsls\HueModifierFilter.cs" />
+    <Compile Include="Filtering\Hsls\IHslFilters.cs" />
+    <Compile Include="Filtering\Hsls\SaturationFilter.cs" />
+    <Compile Include="Filtering\IFilter.cs" />
+    <Compile Include="Filtering\IFiltering.cs" />
+    <Compile Include="Filtering\MatrixFilter.cs" />
+    <Compile Include="Filtering\Hsls\BrightnessFilter.cs" />
+    <Compile Include="Filtering\Colors\RemapingColorFilter.cs" />
+    <Compile Include="Filtering\Hsls\ContrastFilter.cs" />
+    <Compile Include="Filtering\Colors\GrayscaleBt709Filter.cs" />
+    <Compile Include="Filtering\Colors\GrayscaleRmyFilter.cs" />
+    <Compile Include="Filtering\Colors\GrayscaleYFilter.cs" />
+    <Compile Include="Filtering\ConvertMatrix.cs" />
+    <Compile Include="Filtering\Edges\EdgeQuickFilter.cs" />
+    <Compile Include="Filtering\Edges\EdgeType.cs" />
+    <Compile Include="Filtering\Convolution\EmbossFilter.cs" />
+    <Compile Include="Filtering\BaseFilter.cs" />
+    <Compile Include="Filtering\Colors\GammaFilter.cs" />
+    <Compile Include="Filtering\Convolution\BlurFilter.cs" />
+    <Compile Include="Filtering\Colors\GrayscaleFilter.cs" />
+    <Compile Include="Filtering\Colors\InvertFilter.cs" />
+    <Compile Include="Filtering\Convolution\MeanRemovalFilter.cs" />
+    <Compile Include="Filtering\Colors\SepiaFilter.cs" />
+    <Compile Include="Filtering\Convolution\SharpenFilter.cs" />
+    <Compile Include="Filtering\Range.cs" />
+    <Compile Include="Filtering\Rgb.cs" />
+    <Compile Include="Filtering\Smooting\ISmootingFilter.cs" />
+    <Compile Include="Filtering\Smooting\SmoothFilter.cs" />
+    <Compile Include="Filtering\Smooting\SmootingFiltersFactory.cs" />
+    <Compile Include="IRawImage.cs" />
+    <Compile Include="ImageCodec.cs" />
+    <Compile Include="RawImage.cs" />
+    <Compile Include="Operations\Flip.cs" />
+    <Compile Include="FluentImage.cs" />
+    <Compile Include="Operations\FlipType.cs" />
+    <Compile Include="Operations\IFlip.cs" />
+    <Compile Include="Operations\IRotate.cs" />
+    <Compile Include="Operations\Rotate.cs" />
+    <Compile Include="Operations\RotateType.cs" />
+    <Compile Include="OutputFormat.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Drawing\IDraw.cs" />
+    <Compile Include="Resizer\IResize.cs" />
+    <Compile Include="Resizer\Resize.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
