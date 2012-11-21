@@ -13,7 +13,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.image = FluentImage.Create(IoHelper.ResolveUrl("Montanhas azuis.jpg"));
+            this.image = FluentImage.FromFile(IoHelper.ResolveUrl("Montanhas azuis.jpg"));
         }
 
         [TearDown]

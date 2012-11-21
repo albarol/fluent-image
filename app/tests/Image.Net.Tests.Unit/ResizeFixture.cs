@@ -16,7 +16,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.builder = FluentImage.Create(IoHelper.ResolveUrl("Inverno.jpg"));
+            this.builder = FluentImage.FromFile(IoHelper.ResolveUrl("Inverno.jpg"));
         }
         
         [Test]

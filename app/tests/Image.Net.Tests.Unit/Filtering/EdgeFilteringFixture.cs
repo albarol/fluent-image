@@ -16,7 +16,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.builder = FluentImage.Create(IoHelper.ResolveUrl(this.resource.Key));
+            this.builder = FluentImage.FromFile(IoHelper.ResolveUrl(this.resource.Key));
         }
 
         [TearDown]

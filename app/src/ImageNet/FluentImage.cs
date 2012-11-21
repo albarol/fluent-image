@@ -59,12 +59,18 @@
         internal Image Image { get; set; }
         internal FilterList Filtering { get; set; }
 
-        public static FluentImage Create(Image image)
+        public static FluentImage FromImage(Image image)
         {
             return new FluentImage(image);
         }
 
-        public static FluentImage Create(string filename)
+        public static FluentImage FromStream(Stream stream)
+        {
+            var image = Image.FromStream(stream);
+            return new FluentImage(image);
+        }
+
+        public static FluentImage FromFile(string filename)
         {
             var image = Image.FromFile(filename);
             return new FluentImage(image);

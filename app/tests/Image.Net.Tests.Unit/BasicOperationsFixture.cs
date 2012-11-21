@@ -22,7 +22,7 @@
         public void Constructor_CanCreateFluentImageByImage()
         {
             // Arrange:
-            var image = FluentImage.Create(Image.FromFile(IoHelper.ResolveUrl("Inverno.jpg")));
+            var image = FluentImage.FromImage(Image.FromFile(IoHelper.ResolveUrl("Inverno.jpg")));
 
             // Act:
             var result = image.ToString();
@@ -35,7 +35,7 @@
         public void Constructor_CanCreateFluentImageByFilename()
         {
             // Arrange:
-            var image = FluentImage.Create(IoHelper.ResolveUrl("Inverno.jpg"));
+            var image = FluentImage.FromFile(IoHelper.ResolveUrl("Inverno.jpg"));
 
             // Act:
             var result = image.ToString();
@@ -48,7 +48,7 @@
         public void ToString_GetImageInBase64Format()
         {
             // Arrange:
-            this.builder = FluentImage.Create(IoHelper.ResolveUrl("Inverno.jpg"));
+            this.builder = FluentImage.FromFile(IoHelper.ResolveUrl("Inverno.jpg"));
 
             // Act:
             var result = this.builder.ToString();

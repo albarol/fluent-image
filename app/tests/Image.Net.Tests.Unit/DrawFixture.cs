@@ -17,7 +17,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.image = FluentImage.Create(IoHelper.ResolveUrl("Inverno.jpg"));
+            this.image = FluentImage.FromFile(IoHelper.ResolveUrl("Inverno.jpg"));
         }
 
         [TearDown]
@@ -35,7 +35,7 @@
         [Test]
         public void ApplyImage_ShouldApplyPartOfImage()
         {
-            var partOfImage = FluentImage.Create(IoHelper.ResolveUrl("Montanhas azuis.jpg"));
+            var partOfImage = FluentImage.FromFile(IoHelper.ResolveUrl("Montanhas azuis.jpg"));
             partOfImage.Resize.Crop(new Rectangle(100, 0, 200, partOfImage.Current.Height));
             this.image.Draw.ApplyImage(partOfImage);
         }
@@ -43,7 +43,7 @@
         [Test]
         public void ApplyImage_ShouldApplyImageInCenter()
         {
-            var partOfImage = FluentImage.Create(IoHelper.ResolveUrl("Montanhas azuis.jpg"));
+            var partOfImage = FluentImage.FromFile(IoHelper.ResolveUrl("Montanhas azuis.jpg"));
             this.image.Draw.ApplyImage(partOfImage, new Rectangle(Convert.ToInt32(this.image.Current.Width / 2), Convert.ToInt32(this.image.Current.Height / 2), 200, 200));
         }
     }

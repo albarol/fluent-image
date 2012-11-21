@@ -13,7 +13,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.builder = FluentImage.Create(IoHelper.ResolveUrl("Ninféias.jpg"));
+            this.builder = FluentImage.FromFile(IoHelper.ResolveUrl("Ninféias.jpg"));
         }
 
         [TearDown]

@@ -13,7 +13,7 @@
         [SetUp]
         public void SetUp()
         {
-            this.fluentImage = FluentImage.Create(IoHelper.ResolveUrl("Pôr-do-sol.jpg"));
+            this.fluentImage = FluentImage.FromFile(IoHelper.ResolveUrl("Pôr-do-sol.jpg"));
         }
 
         [TearDown]
