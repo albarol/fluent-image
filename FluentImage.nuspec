@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+    <metadata>
+        <id>FluentImage</id>
+        <version>1.0</version>    
+        <description>Fluent library to apply filters and manipulate images</description>
+        <licenseUrl>https://github.com/fakeezz/fluent-image/blob/master/LICENSE.txt</licenseUrl>
+        <authors>Alexandre Barbieri</authors>
+        <owners>Alexandre Barbieri</owners>
+        <language>en-US</language>
+        <projectUrl>https://github.com/fakeezz/fluent-image</projectUrl>
+        <tags>image thumbnail filters crop resizer</tags>
+    </metadata>
+</package>
