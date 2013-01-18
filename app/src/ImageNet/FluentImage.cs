@@ -88,14 +88,19 @@
 
         public void Save(string path, OutputFormat format)
         {
-            foreach (var filter in this.Filtering.Filters)
-            {
+            var realPath = string.Format(@"{0}\{1}{2}", Path.GetDirectoryName(path), Path.GetFileNameWithoutExtension(path), Path.GetExtension(path));
+            using (var fileStream = new FileStream(realPath, FileMode.Create)) {
+                Save(fileStream, format);
+            }
+        }
+
+        public void Save(Stream imageStream, OutputFormat format) {
+            foreach (var filter in this.Filtering.Filters) {
                 filter.ProcessFilter(this.Image);
             }
 
-            var realPath = string.Format(@"{0}\{1}{2}", Path.GetDirectoryName(path), Path.GetFileNameWithoutExtension(path), Path.GetExtension(path));
             this.Image.Save(
-                realPath,
+                imageStream,
                 ImageCodec.FromOutputFormat(format),
                 this.Encoders.Count > 0 ? new EncoderParameters { Param = this.Encoders.ToArray() } : null);
         }
