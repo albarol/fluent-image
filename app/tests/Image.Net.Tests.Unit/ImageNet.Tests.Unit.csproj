@@ -61,6 +61,7 @@
     <Compile Include="Filtering\ConvolutionFilteringFixture.cs" />
     <Compile Include="Filtering\EdgeFilteringFixture.cs" />
     <Compile Include="Filtering\HslFilteringFixture.cs" />
+    <Compile Include="Filtering\SmootingFilterFixture.cs" />
     <Compile Include="FlipFixture.cs" />
     <Compile Include="Helpers\IoHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,13 +73,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ImageNet\ImageNet.csproj">
-      <Project>{4EA2F945-2A83-4BCC-98DF-DB702217B91F}</Project>
-      <Name>Image.Net.Core</Name>
-    </ProjectReference>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <ProjectReference Include="..\..\src\ImageNet\ImageNet.csproj">
+      <Project>{4ea2f945-2a83-4bcc-98df-db702217b91f}</Project>
+      <Name>ImageNet</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,5 +8,10 @@
         {
             return new SmoothFilter();
         }
+
+        public IFilter Median(int size)
+        {
+            return new Median(size);
+        }
     }
 }

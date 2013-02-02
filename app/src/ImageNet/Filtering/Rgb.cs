@@ -100,11 +100,6 @@
 
         private byte EnsureLimit(byte value)
         {
-            if (value < -255)
-            {
-                return 0;
-            }
-
             if (value > 255)
             {
                 return 255;
