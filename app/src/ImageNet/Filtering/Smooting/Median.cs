@@ -29,11 +29,9 @@ namespace ImageNet.Filtering.Smooting
             int rangeRow, rangeColumn, currentPixel;
             int radius = size >> 1;
             int length;
-
             
             var source = (byte*) BitmapDataSource.Scan0.ToPointer();
             var destination = (byte*) BitmapData.Scan0.ToPointer();
-
 
             for (int row = 0; row < this.Bitmap.Height; row++)
             {
