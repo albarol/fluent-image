@@ -12,6 +12,7 @@
     <AssemblyName>ImageNet</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -85,6 +88,7 @@
     <Compile Include="Filtering\Range.cs" />
     <Compile Include="Filtering\Rgb.cs" />
     <Compile Include="Filtering\Smooting\ISmootingFilter.cs" />
+    <Compile Include="Filtering\Smooting\Median.cs" />
     <Compile Include="Filtering\Smooting\SmoothFilter.cs" />
     <Compile Include="Filtering\Smooting\SmootingFiltersFactory.cs" />
     <Compile Include="IRawImage.cs" />
